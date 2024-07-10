@@ -1,6 +1,6 @@
 const PDFDocument = require("pdfkit");
 const fs = require("fs");
-const genPdf = ({ text, imagePath }) => {
+const genPdf = ({text, imagePath}) => {
   const doc = new PDFDocument();
   doc.pipe(fs.createWriteStream("output.pdf"));
   doc.fontSize(25).text(text, 100, 100);
@@ -11,5 +11,4 @@ const genPdf = ({ text, imagePath }) => {
   });
   doc.end();
 };
-genPdf({ text: "This is the sample of panel house", imagePath: "./panel.jpg" });
-
+genPdf({text:"Cute kitten greeting!",imagePath:"./kitten.jpg"})

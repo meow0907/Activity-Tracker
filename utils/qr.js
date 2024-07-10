@@ -8,10 +8,11 @@
 // generate(url);
 
 //sir code
-const QRCode = require("qrcode");
+const QRCode= require("qrcode");
 
-const genQr = async (text) => {
+const genQr = async (text) =>{
   const result = await QRCode.toDataURL(text);
   return result;
 };
 
+module.exports={genQr};
